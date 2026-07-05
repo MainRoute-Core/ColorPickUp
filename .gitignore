@@ -1,0 +1,8 @@
+
+/mainroute-inteligence.logs/
+/npm-debug.log
+/.idea/
+/.vscode/
+/dist/index.html
+/node_modules
+/package-lock.json
