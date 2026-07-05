@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Generate customizable initialization code for ColorPickUp color pickers interactively using the Sandbox builder.">
+    <meta name="keywords" content="configuration generator, sandbox, code preview, color picker setup">
+    <meta name="author" content="ColorPickUp">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://MainRoute-Core.github.io/ColorPickUp/setup">
+    <meta property="og:title" content="Sandbox Configuration Builder | ColorPickUp">
+    <meta property="og:description" content="Build and export your custom setup parameters with a real-time live preview window.">
+    <meta property="og:image" content="../src/social-.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sandbox Configuration Builder | ColorPickUp">
+    <meta name="twitter:description" content="Build and export your custom setup parameters with a real-time live preview window.">
+    <meta name="twitter:image" content="../src/social-.png">
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "applicationCategory": "WebApplication",
+        "operatingSystem": "Web Browser",
+        "name": "ColorPickUp",
+        "url": "https://MainRoute-Core.github.io/ColorPickUp",
+        "description": "ColorPickUp is a fast, grid-optimized, and zero-dependency color picker library. Features 16 UI styles, advanced themes, and WCAG accessibility validation.",
+        "author": {
+            "@type": "Person",
+            "name": "Pro Bandey"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Pro Bandey"
+        }
+        }
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('../sw.js').then(reg => { console.log('Core Service Worker Active. Scope:', reg.scope); }).catch(err => { console.error('× Service Worker Registration Failed:', err); });
+            });
+        }
+    </script>
+    <link rel="manifest" href="../manifest.webmanifest">
+    <link rel="canonical" href="https://MainRoute-Core.github.io/ColorPickUp">
+    <link rel="shortcut icon" type="image/x-icon" sizes="any" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../src/48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="../src/64.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="../src/144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../src/192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../src/512.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../src/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="../dist/colorpickup.min.css">
+
+    <title>Sandbox Configuration Builder | ColorPickUp</title>
+
+    <style>
+        :root{ --primary: #2563eb; --primary-hover: #1d4ed8; --bg: #ffffff; --bg-soft: #f8fafc; --bg-card: #ffffff; --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --radius: 18px; --radius-sm: 12px; --shadow: 0 15px 40px rgba(15, 23, 42, .08); --container: 1320px; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;} *{ margin: 0; padding: 0; box-sizing: border-box;} body{ background: radial-gradient(circle at top right, #dbeafe 0%, transparent 32%), linear-gradient(#fff, #f8fafc); color: var(--text); font-size: 15px; line-height: 1.7;} .icon{ width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; flex: none;} header{ position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, .86); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border);} .navbar{ max-width: var(--container); height: 72px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px;} .logo{ display: flex; align-items: center; gap: 14px; font-size: 20px; font-weight: 800; text-decoration: none; color: var(--text);} .logo-icon { width: 42px; height: 42px; object-fit: contain; } .nav-links{ display: flex; gap: 10px;} .nav-links a{ text-decoration: none; padding: 10px 16px; border-radius: 10px; font-weight: 600; color: var(--muted); transition: .25s;} .nav-links a:hover, .nav-links .active{ background: #eff6ff; color: var(--primary);} .builder-layout{ max-width: var(--container); margin: auto; padding: 50px 30px 70px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 40px;} .panel{ background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 24px;} .panel-title{ display: flex; align-items: center; gap: 16px;} .panel-title h1{ font-size: 28px; font-weight: 800;} .panel-title p{ color: var(--muted); font-size: 14px;} .form-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;} .field{ display: flex; flex-direction: column; gap: 8px;} .field label{ font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .03em; color: var(--muted);} .field select, .field input[type="text"]{ padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-soft); color: var(--text); outline: none; font-family: inherit; font-size: 14px; transition: .2s;} .field select:focus, .field input[type="text"]:focus{ border-color: var(--primary); background: #fff;} .checkbox-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; background: var(--bg-soft); padding: 16px; border-radius: var(--radius-sm); border: 1px solid var(--border);} .checkbox-grid label{ display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; cursor: pointer; text-transform: none; color: var(--text);} .code-box{ background: #0f172a; border-radius: var(--radius-sm); border: 1px solid #1e293b; overflow: hidden;} .code-header{ display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: #1e293b; color: #cbd5e1; font-size: 13px; font-weight: 600;} .copy-btn{ background: transparent; border: 1px solid rgba(255,255,255,.15); color: #cbd5e1; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 12px; transition: .2s;} .copy-btn:hover{ border-color: var(--primary); color: #fff;} pre{ margin: 0; padding: 20px; overflow: auto;} code{ font-family: Consolas, monospace; font-size: 13px; color: #dbeafe;} .preview-panel{ background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); height: fit-content; position: sticky; top: 92px; display: flex; flex-direction: column; gap: 20px;} .preview-heading{ display: flex; align-items: center; gap: 14px;} .preview-heading h2{ font-size: 20px; font-weight: 700;} .preview-heading p{ color: var(--muted); font-size: 13px;} .preview-card{ background: var(--bg-soft); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; display: flex; justify-content: center; align-items: center; min-height: 180px;} .sandbox-preview-container{ width: 100%; display: flex; justify-content: center;} .sandbox-preview-container input[type="text"]{ width: 200px; height: 34px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--border); background: #fff; color: var(--text); outline: none; font-family: inherit;} @media(max-width: 980px){ .builder-layout{ grid-template-columns: 1fr;} .preview-panel{ position: relative; top: auto;} .nav-links{ display: none;}} 
+    </style>
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol id="icon-palette" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <circle cx="8" cy="10" r="1" />
+            <circle cx="12" cy="7" r="1" />
+            <circle cx="16" cy="10" r="1" />
+            <path d="M12 21c3 0 3-3 2-4-1-1-.5-3 2-3h2" />
+        </symbol>
+        <symbol id="icon-sliders" viewBox="0 0 24 24">
+            <line x1="4" y1="21" x2="4" y2="14" />
+            <line x1="4" y1="10" x2="4" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="12" />
+            <line x1="12" y1="8" x2="12" y2="3" />
+            <line x1="20" y1="21" x2="20" y2="16" />
+            <line x1="20" y1="12" x2="20" y2="3" />
+            <line x1="2" y1="14" x2="6" y2="14" />
+            <line x1="10" y1="8" x2="14" y2="8" />
+            <line x1="18" y1="16" x2="22" y2="16" />
+        </symbol>
+        <symbol id="icon-eye" viewBox="0 0 24 24">
+            <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" />
+            <circle cx="12" cy="12" r="3" />
+        </symbol>
+    </svg>
+
+    <header>
+        <nav class="navbar">
+            <a href="../" class="logo">
+                <img class="logo-icon" src="../src/512.png" alt="ColorPickUp Logo">
+                ColorPickUp
+            </a>
+            <div class="nav-links">
+                <a href="../">Quick Start</a>
+                <a href="../demos/">Demos</a>
+                <a href="../setup/" class="active">Sandbox Builder</a>
+                <a href="../events/">Schema & Events</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="builder-layout">
+        <section class="panel">
+            <div class="panel-title">
+                <svg class="icon"><use href="#icon-sliders"></use></svg>
+                <div>
+                    <h1>Configuration Builder</h1>
+                    <p>Generate ColorPickUp configuration interactively.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="field">
+                    <label for="setup-field-mode">Field Mode</label>
+                    <select id="setup-field-mode" onchange="regenerateConfig()">
+                        <option value="both">Input + Preview</option>
+                        <option value="input">Input Only</option>
+                        <option value="color">Preview Only</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="setup-style">Style Engine</label>
+                    <select id="setup-style" onchange="regenerateConfig()">
+                        <option value="modern">Modern</option>
+                        <option value="macos">macOS</option>
+                        <option value="windows11">Windows 11</option>
+                        <option value="glass">Glass</option>
+                        <option value="figma">Figma</option>
+                        <option value="terminal">Terminal</option>
+                        <option value="retro">Retro</option>
+                        <option value="neon">Neon</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="setup-theme">Theme</label>
+                    <select id="setup-theme" onchange="regenerateConfig()">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="amoled">AMOLED</option>
+                        <option value="catppuccin">Catppuccin</option>
+                        <option value="dracula">Dracula</option>
+                        <option value="nord">Nord</option>
+                        <option value="gruvbox">Gruvbox</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="setup-anim">Animation</label>
+                    <select id="setup-anim" onchange="regenerateConfig()">
+                        <option value="scale">Scale</option>
+                        <option value="fade">Fade</option>
+                        <option value="slide">Slide</option>
+                        <option value="bounce">Bounce</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Components</label>
+                <div class="checkbox-grid">
+                    <label><input type="checkbox" id="comp-format" checked onchange="regenerateConfig()"> Format Selector</label>
+                    <label><input type="checkbox" id="comp-alpha" checked onchange="regenerateConfig()"> Alpha</label>
+                    <label><input type="checkbox" id="comp-history" checked onchange="regenerateConfig()"> History</label>
+                    <label><input type="checkbox" id="comp-harmony" checked onchange="regenerateConfig()"> Harmonies</label>
+                    <label><input type="checkbox" id="comp-palette" checked onchange="regenerateConfig()"> Palette Grid</label>
+                    <label><input type="checkbox" id="comp-palette-sel" checked onchange="regenerateConfig()"> Palette Selector</label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="setup-wcag-bg">WCAG Background Reference</label>
+                <input id="setup-wcag-bg" type="text" value="#ffffff" onchange="regenerateConfig()">
+            </div>
+
+            <section class="code-box">
+                <div class="code-header">
+                    <span>Generated Configuration</span>
+                    <button id="copy-btn" class="copy-btn" onclick="copyConfig()">
+                        Copy Config
+                    </button>
+                </div>
+                <pre><code id="code-block">// Configuration appears here...</code></pre>
+            </section>
+        </section>
+
+        <aside class="preview-panel">
+            <div class="preview-heading">
+                <svg class="icon"><use href="#icon-eye"></use></svg>
+                <div>
+                    <h2>Live Preview</h2>
+                    <p>All changes are reflected instantly.</p>
+                </div>
+            </div>
+
+            <div class="preview-card">
+                <div id="sandbox-preview-container" class="sandbox-preview-container">
+                    <input type="text" id="sandbox-target" value="#2563eb">
+                </div>
+            </div>
+        </aside>
+        
+    </main>
+
+    <footer style="text-align: center; padding: 1rem;">
+        &copy; <span id="year">2026</span> <a style="color: var(--primary);text-decoration: none;" href="https://MainRoute-Core.github.io">MainRoute Core</a> • All Rights Reserved. &bull; <a style="color: var(--primary);text-decoration: none;" href="https://Pro-Bandey.github.io">Pro Bandey</a>
+    </footer>
+    <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="../dist/colorpickup.min.js"></script>
+    <script>
+        function regenerateConfig() {
+            const fieldMode = document.getElementById('setup-field-mode').value;
+            const style = document.getElementById('setup-style').value;
+            const theme = document.getElementById('setup-theme').value;
+            const animation = document.getElementById('setup-anim').value;
+            const wcagBg = document.getElementById('setup-wcag-bg').value;
+
+            const compFormat = document.getElementById('comp-format').checked;
+            const compAlpha = document.getElementById('comp-alpha').checked;
+            const compHistory = document.getElementById('comp-history').checked;
+            const compHarmony = document.getElementById('comp-harmony').checked;
+            const compPalette = document.getElementById('comp-palette').checked;
+            const compPaletteSel = document.getElementById('comp-palette-sel').checked;
+
+            const previewWrapper = document.getElementById('sandbox-preview-container');
+            previewWrapper.innerHTML = '';
+
+            const cleanInput = document.createElement('input');
+            cleanInput.type = 'text';
+            cleanInput.id = 'sandbox-target';
+            cleanInput.value = '#2563eb';
+            previewWrapper.appendChild(cleanInput);
+
+            // Re-configure target values dynamically
+            const config = {
+                el: '#sandbox-target',
+                fieldMode: fieldMode,
+                style: style,
+                theme: theme,
+                animation: animation,
+                formatToggle: compFormat,
+                alpha: compAlpha,
+                wcagTextBackground: wcagBg,
+                components: {
+                    history: compHistory,
+                    harmony: compHarmony,
+                    palette: compPalette,
+                    paletteSelector: compPaletteSel
+                }
+            };
+
+            ColorPickUp(config);
+
+            const formattedCode = `ColorPickUp({\n  el: '#sandbox-target',\n  fieldMode: '${fieldMode}',\n  style: '${style}',\n  theme: '${theme}',\n  animation: '${animation}',\n  formatToggle: ${compFormat},\n  alpha: ${compAlpha},\n  wcagTextBackground: '${wcagBg}',\n  components: {\n    history: ${compHistory},\n    harmony: ${compHarmony},\n    palette: ${compPalette},\n    paletteSelector: ${compPaletteSel}\n  }\n});`;
+
+            document.getElementById('code-block').innerText = formattedCode;
+        }
+
+        function copyConfig() {
+            const text = document.getElementById('code-block').innerText;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    const btn = document.getElementById('copy-btn');
+                    btn.innerText = 'Copied!';
+                    setTimeout(() => btn.innerText = 'Copy Config', 1000);
+                });
+            }
+        }
+
+        regenerateConfig();
+    </script>
+</body>
+</html>

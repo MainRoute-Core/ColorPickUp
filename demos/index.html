@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="View integrated examples of ColorPickUp using different visual engines: macOS, Figma, Terminal, and Windows.">
+    <meta name="keywords" content="colorpicker, UI styles, web engineering, demos, interactive examples">
+    <meta name="author" content="ColorPickUp">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://MainRoute-Core.github.io/ColorPickUp/demos">
+    <meta property="og:title" content="Interactive Demos | ColorPickUp">
+    <meta property="og:description" content="Explore ColorPickUp integration designs dynamically on live-preview interface blocks.">
+    <meta property="og:image" content="../src/social-.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Interactive Demos | ColorPickUp">
+    <meta name="twitter:description" content="Explore ColorPickUp integration designs dynamically on live-preview interface blocks.">
+    <meta name="twitter:image" content="../src/social-.png">
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "applicationCategory": "WebApplication",
+        "operatingSystem": "Web Browser",
+        "name": "ColorPickUp",
+        "url": "https://MainRoute-Core.github.io/ColorPickUp/",
+        "description": "ColorPickUp is a fast, grid-optimized, and zero-dependency color picker library. Features 16 UI styles, advanced themes, and WCAG accessibility validation.",
+        "author": {
+            "@type": "Person",
+            "name": "Pro Bandey"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Pro Bandey"
+        }
+        }
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('../sw.js').then(reg => { console.log('Core Service Worker Active. Scope:', reg.scope); }).catch(err => { console.error('× Service Worker Registration Failed:', err); });
+            });
+        }
+    </script>
+    <link rel="manifest" href="../manifest.webmanifest">
+    <link rel="canonical" href="https://MainRoute-Core.github.io/ColorPickUp">
+    <link rel="shortcut icon" type="image/x-icon" sizes="any" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../src/48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="../src/64.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="../src/144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../src/192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../src/512.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../src/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="../dist/colorpickup.min.css">
+
+    <title>Interactive Demos | ColorPickUp</title>
+
+    <style>
+        :root{ --primary: #2563eb; --primary-hover: #1d4ed8; --bg: #ffffff; --bg-soft: #f8fafc; --bg-card: #ffffff; --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --radius: 18px; --radius-sm: 12px; --shadow: 0 15px 40px rgba(15, 23, 42, .08); --container: 1320px; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;} *{ margin: 0; padding: 0; box-sizing: border-box;} html{ scroll-behavior: smooth;} body{ background: radial-gradient(circle at top right, #dbeafe 0%, transparent 32%), linear-gradient(#fff, #f8fafc); color: var(--text); font-size: 15px; line-height: 1.7;} .icon{ width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; flex: none;} header{ position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, .86); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border);} .navbar{ max-width: var(--container); height: 72px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px;} .logo{ display: flex; align-items: center; gap: 14px; font-size: 20px; font-weight: 800; text-decoration: none; color: var(--text);} .logo-icon{ width: 44px; height: 44px; object-fit: contain;} .nav-links{ display: flex; gap: 10px;} .nav-links a{ text-decoration: none; padding: 10px 16px; border-radius: 10px; font-weight: 600; color: var(--muted); transition: .25s;} .nav-links a:hover, .nav-links .active{ background: #eff6ff; color: var(--primary);} .container{ max-width: var(--container); margin: auto; padding: 50px 30px 70px;} .page-header{ display: flex; align-items: center; gap: 22px; margin-bottom: 45px;} .page-icon{ width: 70px; height: 70px; display: grid; place-items: center; border-radius: 20px; background: linear-gradient(135deg, #2563eb, #60a5fa); color: #fff;} .page-icon .icon{ width: 28px; height: 28px;} .page-header h1{ font-size: 42px; letter-spacing: -.03em; margin-bottom: 8px;} .page-header p{ max-width: 700px; color: var(--muted); font-size: 17px;} .demo-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 28px;} .demo-card{ background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); transition: .25s; display: flex; flex-direction: column;} .demo-card:hover{ transform: translateY(-6px); box-shadow: 0 24px 60px rgba(15, 23, 42, .12);} .demo-head{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;} .demo-head h2{ font-size: 21px; font-weight: 700;} .demo-badge{ padding: 6px 12px; border-radius: 999px; background: #eff6ff; color: var(--primary); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;} .demo-card p{ color: var(--muted); margin-bottom: 20px; min-height: 48px;} .demo-preview{ background: var(--bg-soft); border: 1px dashed var(--border); border-radius: 16px; padding: 30px; display: flex; justify-content: center; align-items: center; margin-bottom: 22px; min-height: 110px;} .demo-input{ width: 220px; height: 34px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--border); background: #fff; color: var(--text); outline: none; font-family: inherit;} pre{ background: #0f172a; border-radius: 14px; overflow: auto; padding: 20px; margin-top: auto;} code{ font-size: 13px; font-family: Consolas, monospace; color: #dbeafe;} pre::-webkit-scrollbar{ height: 8px;} pre::-webkit-scrollbar-thumb{ background: #334155; border-radius: 99px;} @media (max-width:900px){ .nav-links{ display: none;} .page-header{ flex-direction: column; align-items: flex-start;} .page-header h1{ font-size: 34px;} .demo-grid{ grid-template-columns: 1fr;}} @media (max-width:500px){ .container{ padding: 30px 18px 50px;} .navbar{ padding: 0 18px;} .demo-card{ padding: 20px;} .demo-preview{ padding: 24px;} .demo-input{ width: 100%;}} 
+    </style>
+</head>
+
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+        <symbol id="icon-palette" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <circle cx="8" cy="10" r="1" />
+            <circle cx="12" cy="7" r="1" />
+            <circle cx="16" cy="10" r="1" />
+            <path d="M12 21c3 0 3-3 2-4-1-1-.5-3 2-3h2" />
+        </symbol>
+        <symbol id="icon-layout" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="16" rx="2" />
+            <line x1="9" y1="4" x2="9" y2="20" />
+            <line x1="9" y1="10" x2="21" y2="10" />
+        </symbol>
+    </svg>
+
+    <header>
+        <nav class="navbar">
+            <a href="../" class="logo">
+                <img class="logo-icon" src="../src/512.png" alt="ColorPickUp Logo">
+                ColorPickUp
+            </a>
+            <div class="nav-links">
+                <a href="../">Quick Start</a>
+                <a href="../demos/" class="active">Demos</a>
+                <a href="../setup/">Sandbox Builder</a>
+                <a href="../events/">Schema & Events</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <div class="page-icon">
+                <svg class="icon"><use href="#icon-layout"></use></svg>
+            </div>
+            <div>
+                <h1>Interactive Demo Gallery</h1>
+                <p>
+                    Explore different field modes, interface styles, and themes.
+                    Every example below is fully interactive.
+                </p>
+            </div>
+        </section>
+
+        <section class="demo-grid">
+            <article class="demo-card">
+                <div class="demo-head">
+                    <h2>Standard Input</h2>
+                    <span class="demo-badge">Default</span>
+                </div>
+                <p>Standard input field with integrated color preview.</p>
+                <div class="demo-preview">
+                    <input type="text" class="demo-input demo-standard" value="#2563eb">
+                </div>
+                <pre><code>ColorPickUp.setInstance(
+'.demo-standard', {
+    fieldMode: 'both',
+    style: 'modern',
+    theme: 'light'
+});</code></pre>
+            </article>
+
+            <article class="demo-card">
+                <div class="demo-head">
+                    <h2>Glass UI</h2>
+                    <span class="demo-badge">Style</span>
+                </div>
+                <p>Glassmorphism interface with dark appearance.</p>
+                <div class="demo-preview">
+                    <input type="text" class="demo-input demo-glass" value="#06b6d4">
+                </div>
+                <pre><code>style: 'glass'
+theme: 'dark'</code></pre>
+            </article>
+
+            <article class="demo-card">
+                <div class="demo-head">
+                    <h2>Color Button</h2>
+                    <span class="demo-badge">Mode</span>
+                </div>
+                <p>Compact trigger showing only the color button.</p>
+                <div class="demo-preview">
+                    <input type="text" class="demo-input demo-color" value="#ef4444">
+                </div>
+                <pre><code>fieldMode: 'color'
+style: 'windows11'</code></pre>
+            </article>
+
+            <article class="demo-card">
+                <div class="demo-head">
+                    <h2>macOS Theme</h2>
+                    <span class="demo-badge">macOS</span>
+                </div>
+                <p>Native macOS inspired appearance with rounded controls.</p>
+                <div class="demo-preview">
+                    <input type="text" class="demo-input demo-macos" value="#8b5cf6">
+                </div>
+                <pre><code>style: 'macos'
+theme: 'light'</code></pre>
+            </article>
+
+            <article class="demo-card">
+                <div class="demo-head">
+                    <h2>Terminal Theme</h2>
+                    <span class="demo-badge">Retro</span>
+                </div>
+                <p>Terminal interface using green-on-black styling.</p>
+                <div class="demo-preview">
+                    <input type="text" class="demo-input demo-terminal" value="#22c55e">
+                </div>
+                <pre><code>style: 'terminal'
+theme: 'dark'</code></pre>
+            </article>
+
+            <article class="demo-card">
+                <div class="demo-head">
+                    <h2>Advanced Features</h2>
+                    <span class="demo-badge">Pro</span>
+                </div>
+                <p>History, harmonies, alpha support and palettes enabled.</p>
+                <div class="demo-preview">
+                    <input type="text" class="demo-input demo-pro" value="#f97316">
+                </div>
+                <pre><code>{
+    alpha: true,
+    history: true,
+    harmony: true,
+    palette: true
+}</code>
+</pre>
+            </article>
+        </section>
+    </main>
+
+    <footer style="text-align: center; padding: 1rem;">
+        &copy; <span id="year">2026</span> <a style="color: var(--primary);text-decoration: none;" href="https://MainRoute-Core.github.io">MainRoute Core</a> • All Rights Reserved. &bull; <a style="color: var(--primary);text-decoration: none;" href="https://Pro-Bandey.github.io">Pro Bandey</a>
+    </footer>
+    <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="../dist/colorpickup.min.js"></script>
+    <script>
+        ColorPickUp({
+            el: ".demo-input",
+        });
+
+        ColorPickUp.setInstance(".demo-standard", {
+            fieldMode: "both",
+            style: "modern",
+            theme: "light",
+            animation: "scale"
+        });
+
+        ColorPickUp.setInstance(".demo-glass", {
+            fieldMode: "both",
+            style: "glass",
+            theme: "dark",
+            animation: "fade",
+            alpha: true,
+            components: {
+                history: true,
+                harmony: true
+            }
+        });
+
+        ColorPickUp.setInstance(".demo-color", {
+            fieldMode: "color",
+            style: "windows11",
+            theme: "nord",
+            animation: "slide"
+        });
+
+        ColorPickUp.setInstance(".demo-macos", {
+            fieldMode: "both",
+            style: "macos",
+            theme: "light",
+            animation: "bounce",
+            alpha: true,
+            components: {
+                history: true,
+                palette: true
+            }
+        });
+
+        ColorPickUp.setInstance(".demo-terminal", {
+            fieldMode: "input",
+            style: "terminal",
+            theme: "dark",
+            animation: "none",
+            alpha: false,
+            formatToggle: false,
+            components: {
+                history: false,
+                harmony: false,
+                palette: false
+            }
+        });
+
+        ColorPickUp.setInstance(".demo-pro", {
+            fieldMode: "both",
+            style: "figma",
+            theme: "dracula",
+            animation: "scale",
+            alpha: true,
+            eyedropper: true,
+            components: {
+                history: true,
+                harmony: true,
+                palette: true,
+                paletteSelector: true
+            }
+        });
+    </script>
+</body>
+</html>
