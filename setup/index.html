@@ -61,9 +61,9 @@
     <link rel="stylesheet" href="../dist/colorpickup.min.css">
 
     <title>Sandbox Configuration Builder | ColorPickUp</title>
-
+    
     <style>
-        :root{ --primary: #2563eb; --primary-hover: #1d4ed8; --bg: #ffffff; --bg-soft: #f8fafc; --bg-card: #ffffff; --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --radius: 18px; --radius-sm: 12px; --shadow: 0 15px 40px rgba(15, 23, 42, .08); --container: 1320px; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;} *{ margin: 0; padding: 0; box-sizing: border-box;} body{ background: radial-gradient(circle at top right, #dbeafe 0%, transparent 32%), linear-gradient(#fff, #f8fafc); color: var(--text); font-size: 15px; line-height: 1.7;} .icon{ width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none; flex: none;} header{ position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, .86); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border);} .navbar{ max-width: var(--container); height: 72px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 0 30px;} .logo{ display: flex; align-items: center; gap: 14px; font-size: 20px; font-weight: 800; text-decoration: none; color: var(--text);} .logo-icon { width: 42px; height: 42px; object-fit: contain; } .nav-links{ display: flex; gap: 10px;} .nav-links a{ text-decoration: none; padding: 10px 16px; border-radius: 10px; font-weight: 600; color: var(--muted); transition: .25s;} .nav-links a:hover, .nav-links .active{ background: #eff6ff; color: var(--primary);} .builder-layout{ max-width: var(--container); margin: auto; padding: 50px 30px 70px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 40px;} .panel{ background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 24px;} .panel-title{ display: flex; align-items: center; gap: 16px;} .panel-title h1{ font-size: 28px; font-weight: 800;} .panel-title p{ color: var(--muted); font-size: 14px;} .form-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;} .field{ display: flex; flex-direction: column; gap: 8px;} .field label{ font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .03em; color: var(--muted);} .field select, .field input[type="text"]{ padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-soft); color: var(--text); outline: none; font-family: inherit; font-size: 14px; transition: .2s;} .field select:focus, .field input[type="text"]:focus{ border-color: var(--primary); background: #fff;} .checkbox-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; background: var(--bg-soft); padding: 16px; border-radius: var(--radius-sm); border: 1px solid var(--border);} .checkbox-grid label{ display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; cursor: pointer; text-transform: none; color: var(--text);} .code-box{ background: #0f172a; border-radius: var(--radius-sm); border: 1px solid #1e293b; overflow: hidden;} .code-header{ display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: #1e293b; color: #cbd5e1; font-size: 13px; font-weight: 600;} .copy-btn{ background: transparent; border: 1px solid rgba(255,255,255,.15); color: #cbd5e1; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 12px; transition: .2s;} .copy-btn:hover{ border-color: var(--primary); color: #fff;} pre{ margin: 0; padding: 20px; overflow: auto;} code{ font-family: Consolas, monospace; font-size: 13px; color: #dbeafe;} .preview-panel{ background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); height: fit-content; position: sticky; top: 92px; display: flex; flex-direction: column; gap: 20px;} .preview-heading{ display: flex; align-items: center; gap: 14px;} .preview-heading h2{ font-size: 20px; font-weight: 700;} .preview-heading p{ color: var(--muted); font-size: 13px;} .preview-card{ background: var(--bg-soft); border: 1px dashed var(--border); border-radius: 16px; padding: 40px; display: flex; justify-content: center; align-items: center; min-height: 180px;} .sandbox-preview-container{ width: 100%; display: flex; justify-content: center;} .sandbox-preview-container input[type="text"]{ width: 200px; height: 34px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--border); background: #fff; color: var(--text); outline: none; font-family: inherit;} @media(max-width: 980px){ .builder-layout{ grid-template-columns: 1fr;} .preview-panel{ position: relative; top: auto;} .nav-links{ display: none;}} 
+        :root{ color-scheme: light dark; --primary: #2563eb; --primary-hover: #1d4ed8; --bg: #ffffff; --bg-soft: #f8fafc; --bg-card: #ffffff; --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --header-bg: rgba(255,255,255,.86); --body-gradient: radial-gradient(circle at top right,#dbeafe 0%,transparent 32%), linear-gradient(#ffffff,#f8fafc); --hover-bg: #eff6ff; --input-bg: var(--bg-soft); --input-focus-bg: #ffffff; --code-bg: #0f172a; --code-header: #1e293b; --code-border: #1e293b; --code-text: #dbeafe; --shadow: 0 15px 40px rgba(15,23,42,.08); --radius: 18px; --radius-sm: 12px; --container: 1320px; font-family: Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;} @media (prefers-color-scheme: dark){ :root{ --bg: #0f172a; --bg-soft: #1e293b; --bg-card: #111827; --text: #f8fafc; --muted: #94a3b8; --border: #334155; --header-bg: rgba(15,23,42,.85); --body-gradient: radial-gradient(circle at top right,#1d4ed8 0%,transparent 30%), linear-gradient(#020617,#0f172a); --hover-bg: rgba(37,99,235,.18); --input-bg: #1e293b; --input-focus-bg: #273449; --code-bg: #020617; --code-header: #111827; --code-border: #334155; --code-text: #dbeafe; --shadow: 0 15px 40px rgba(0,0,0,.45);}} *{ margin:0; padding:0; box-sizing:border-box;} body{ background:var(--body-gradient); background-color:var(--bg); color:var(--text); font-size:15px; line-height:1.7; transition:background .3s,color .3s;} .icon{ width:20px; height:20px; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; fill:none; flex:none;} header{ position:sticky; top:0; z-index:1000; background:var(--header-bg); backdrop-filter:blur(18px); border-bottom:1px solid var(--border);} .navbar{ max-width:var(--container); height:72px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:0 30px;} .logo{ display:flex; align-items:center; gap:14px; font-size:20px; font-weight:800; text-decoration:none; color:var(--text);} .logo-icon{ width:42px; height:42px; object-fit:contain;} .nav-links{ display:flex; gap:10px;} .nav-links a{ text-decoration:none; padding:10px 16px; border-radius:10px; font-weight:600; color:var(--muted); transition:.25s;} .nav-links a:hover, .nav-links .active{ background:var(--hover-bg); color:var(--primary);} .builder-layout{ max-width:var(--container); margin:auto; padding:50px 30px 70px; display:grid; grid-template-columns:1.25fr .75fr; gap:40px;} .panel{ background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:30px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:24px;} .panel-title{ display:flex; align-items:center; gap:16px;} .panel-title h1{ font-size:28px; font-weight:800;} .panel-title p{ color:var(--muted); font-size:14px;} .form-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;} .field{ display:flex; flex-direction:column; gap:8px;} .field label{ font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.03em; color:var(--muted);} .field select, .field input[type="text"]{ padding:10px 14px; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--input-bg); color:var(--text); outline:none; font-family:inherit; font-size:14px; transition:.2s;} .field select:focus, .field input[type="text"]:focus{ border-color:var(--primary); background:var(--input-focus-bg);} .checkbox-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; background:var(--bg-soft); padding:16px; border-radius:var(--radius-sm); border:1px solid var(--border);} .checkbox-grid label{ display:flex; align-items:center; gap:8px; font-weight:600; font-size:14px; cursor:pointer; text-transform:none; color:var(--text);} .code-box{ background:var(--code-bg); border-radius:var(--radius-sm); border:1px solid var(--code-border); overflow:hidden;} .code-header{ display:flex; justify-content:space-between; align-items:center; padding:12px 20px; background:var(--code-header); color:#cbd5e1; font-size:13px; font-weight:600;} .copy-btn{ background:transparent; border:1px solid rgba(255,255,255,.15); color:#cbd5e1; padding:6px 12px; border-radius:8px; cursor:pointer; font-size:12px; transition:.2s;} .copy-btn:hover{ border-color:var(--primary); color:#fff;} pre{ margin:0; padding:20px; overflow:auto;} code{ font-family:Consolas,monospace; font-size:13px; color:var(--code-text);} .preview-panel{ background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:30px; box-shadow:var(--shadow); height:fit-content; position:sticky; top:92px; display:flex; flex-direction:column; gap:20px;} .preview-heading{ display:flex; align-items:center; gap:14px;} .preview-heading h2{ font-size:20px; font-weight:700;} .preview-heading p{ color:var(--muted); font-size:13px;} .preview-card{ background:var(--bg-soft); border:1px dashed var(--border); border-radius:16px; padding:40px; display:flex; justify-content:center; align-items:center; min-height:180px;} .sandbox-preview-container{ width:100%; display:flex; justify-content:center;} .sandbox-preview-container input[type="text"]{ width:200px; height:34px; padding:0 10px; border-radius:8px; border:1px solid var(--border); background:var(--input-focus-bg); color:var(--text); outline:none; font-family:inherit;} @media(max-width:980px){ .builder-layout{ grid-template-columns:1fr;} .preview-panel{ position:relative; top:auto;} .nav-links{ display:none;}}
     </style>
 </head>
 
@@ -121,7 +121,7 @@
 
             <div class="form-grid">
                 <div class="field">
-                    <label for="setup-field-mode">Field Mode</label>
+                    <label for="setup-field-mode">3 OnPage Field Modes</label>
                     <select id="setup-field-mode" onchange="regenerateConfig()">
                         <option value="both">Input + Preview</option>
                         <option value="input">Input Only</option>
@@ -130,37 +130,53 @@
                 </div>
 
                 <div class="field">
-                    <label for="setup-style">Style Engine</label>
+                    <label for="setup-style">16 Style Engines</label>
                     <select id="setup-style" onchange="regenerateConfig()">
+                        <option value="classic">Classic</option>
                         <option value="modern">Modern</option>
-                        <option value="macos">macOS</option>
-                        <option value="windows11">Windows 11</option>
-                        <option value="glass">Glass</option>
-                        <option value="figma">Figma</option>
+                        <option value="rounded">Rounded</option>
                         <option value="terminal">Terminal</option>
                         <option value="retro">Retro</option>
                         <option value="neon">Neon</option>
+                        <option value="chrome">Chrome</option>
+                        <option value="firefox">FireFox</option>
+                        <option value="adobe">Adobe</option>
+                        <option value="figma">Figma</option>
+                        <option value="windows11">Windows 11</option>
+                        <option value="macos">macOS</option>
+                        <option value="fluent">Fluent</option>
+                        <option value="glass">Glass</option>
+                        <option value="minimal">Minimal</option>
+                        <option value="compact">Compact</option>
                     </select>
                 </div>
 
                 <div class="field">
-                    <label for="setup-theme">Theme</label>
+                    <label for="setup-theme">14 Themes</label>
                     <select id="setup-theme" onchange="regenerateConfig()">
+                        <option value="auto">Auto</option>
                         <option value="light">Light</option>
                         <option value="dark">Dark</option>
                         <option value="amoled">AMOLED</option>
-                        <option value="catppuccin">Catppuccin</option>
+                        <option value="github">GitHub</option>
                         <option value="dracula">Dracula</option>
                         <option value="nord">Nord</option>
+                        <option value="solarized">Solarized</option>
+                        <option value="catppuccin">Catppuccin</option>
+                        <option value="tokyo-night">Tokyo Night</option>
                         <option value="gruvbox">Gruvbox</option>
+                        <option value="material">Material</option>
+                        <option value="one-dark">One Dark</option>
+                        <option value="high-contrast">High Contrast</option>
                     </select>
                 </div>
 
                 <div class="field">
-                    <label for="setup-anim">Animation</label>
+                    <label for="setup-anim">5 Animations</label>
                     <select id="setup-anim" onchange="regenerateConfig()">
-                        <option value="scale">Scale</option>
                         <option value="fade">Fade</option>
+                        <option value="scale">Scale</option>
+                        <option value="zoom">Zoom</option>
                         <option value="slide">Slide</option>
                         <option value="bounce">Bounce</option>
                         <option value="none">None</option>
