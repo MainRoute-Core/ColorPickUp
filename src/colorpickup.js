@@ -1,7 +1,7 @@
 /*!
  * ColorPickUp - Modern, Grid-Optimized, and Fully Accessible Color Picker
  * Engineered for professional integration and clean responsive alignment.
- * Released under the MIT License.
+ * Released under the GNU GENERAL PUBLIC LICENSE.
  */
 
 ((window, document, Math, undefined) => {
