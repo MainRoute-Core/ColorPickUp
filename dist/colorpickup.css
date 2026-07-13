@@ -1,7 +1,7 @@
 /*!
  * ColorPickUp Layout & Styling System
  * Optimized CSS Grid layout for professional visual harmony.
- * Released under the MIT License.
+ * Released under the GNU GENERAL PUBLIC LICENSE.
  */
 
 /* ==========================================================================
@@ -653,6 +653,27 @@ input.cpu-color:focus {
 /* ==========================================================================
    3. Theme Engine overrides (14 Themes)
    ========================================================================== */
+
+/* Auto Theme */
+.cpu-picker.cpu-theme-auto {
+  --cpu-bg: #ffffff;
+  --cpu-card-bg: #f5f6f8;
+  --cpu-text: #1a1f36;
+  --cpu-text-muted: #5a607f;
+  --cpu-border: #e3e8fc;
+  --cpu-accent: #1e90ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cpu-picker.cpu-theme-auto {
+    --cpu-bg: #2d2d30;
+    --cpu-card-bg: #212124;
+    --cpu-text: #f5f5f5;
+    --cpu-text-muted: #aaaaaa;
+    --cpu-border: #4a4a4d;
+    --cpu-accent: #007acc;
+  }
+}
 
 /* Light Theme */
 .cpu-picker.cpu-theme-light {
