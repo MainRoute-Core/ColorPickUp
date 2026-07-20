@@ -34,9 +34,9 @@ Or reference them directly via a secure CDN:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/Pro-Bandey/ColorPickUp@latest/dist/colorpickup.min.css"
+  href="https://cdn.jsdelivr.net/gh/MainRoute-Core/ColorPickUp@latest/dist/colorpickup.min.css"
 />
-<script src="https://cdn.jsdelivr.net/gh/Pro-Bandey/ColorPickUp@latest/dist/colorpickup.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/MainRoute-Core/ColorPickUp@latest/dist/colorpickup.min.js"></script>
 ```
 
 Add the default data attribute `data-colorpickup` to any input field to activate the color picker automatically:
@@ -286,7 +286,7 @@ ColorPickUp.close(true);
 
 1. Clone the git repository:
    ```bash
-   git clone git@github.com:Pro-Bandey/ColorPickUp.git
+   git clone git@github.com:MainRoute-Core/ColorPickUp.git
    ```
 2. Navigate to the directory and install development dependencies:
    ```bash
@@ -311,4 +311,4 @@ ColorPickUp.close(true);
 ## License
 
 Copyright (c) 2026 Pro Bandey.  
-**ColorPickUp** is released under the [GPL v3](https://github.com/Pro-Bandey/ColorPickUp/blob/main/LICENSE).
+**ColorPickUp** is released under the [GPL v3](https://github.com/MainRoute-Core/ColorPickUp/blob/main/LICENSE).
