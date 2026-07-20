@@ -2,24 +2,42 @@
   "name": "colorpickup",
   "version": "1.0.0",
   "description": "ColorPickUp is a fast, grid-optimized, and zero-dependency color picker library. Features 16 UI styles, advanced themes, and WCAG accessibility validation.",
-  "author": "Momo Bassit & ColorPickUp Contributors",
-  "license": "MIT",
-  "main": "dist/colorpickup.js",
-  "style": "dist/colorpickup.css",
+  "license": "GPL-v3.0",
+  "author": {
+    "name": "Pro Bandey",
+    "url": "https://Pro-Bandey.github.io/"
+  },
+  "homepage": "https://github.com/MainRoute-Core/ColorPickUp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MainRoute-Core/ColorPickUp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MainRoute-Core/ColorPickUp/issues"
+  },
+  "keywords": [
+    "color",
+    "pickup",
+    "colorpickup",
+    "colorpicker",
+    "html",
+    "vanilla-js",
+    "ui",
+    "component",
+    "library",
+    "accessible"
+  ],
+  "main": "dist/ColorPickUp.js",
+  "style": "dist/ColorPickUp.css",
+  "files": [
+    "dist",
+    "!dist/index.html",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "gulp build",
-    "start": "gulp"
-  },
-  "browserslist": "> 0.25%, not dead",
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "loose": true
-        }
-      ]
-    ]
+    "watch": "gulp"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -31,5 +49,16 @@
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.3",
     "gulp-uglify": "^3.0.2"
+  },
+  "browserslist": "> 0.25%, not dead",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "loose": true
+        }
+      ]
+    ]
   }
 }
